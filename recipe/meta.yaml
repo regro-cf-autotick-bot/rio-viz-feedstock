@@ -1,5 +1,5 @@
 {% set name = "rio-viz" %}
-{% set version = "0.7.2" %}
+{% set version = "0.9.2" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/rio-viz-{{ version }}.tar.gz
-  sha256: cf5f72a7ac02f85453294a3f63cec6a33bc9e77ce19787c205b98b7097d57dac
+  sha256: 55449e3a604c117e0bf5443e6417a459e2403364eb932c8da774b01a41b5bdd6
 
 build:
   number: 0
