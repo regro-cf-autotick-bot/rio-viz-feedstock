@@ -7,21 +7,21 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/rio-viz-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/rio-viz-{{ version }}.tar.gz
   sha256: cf5f72a7ac02f85453294a3f63cec6a33bc9e77ce19787c205b98b7097d57dac
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
     - pip
-    - python >=3.6
+    - python {{ python_min }}
   run:
     - braceexpand
-    - python >=3.6
+    - python >={{ python_min }}
     - rio-cogeo >=2.2,<3.0
     - rio-tiler >=2.1,<3.0
     - titiler-core >=0.3.10,<0.4
@@ -35,6 +35,7 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/developmentseed/rio-viz
